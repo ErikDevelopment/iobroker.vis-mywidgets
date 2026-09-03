@@ -1,10 +1,21 @@
 name: Build widgets
 
+# Builds src-widgets/ (TypeScript + Vite/Module Federation) and commits the
+# result (widgets/mywidgets/customWidgets.js) back into the repository, so
+# that `iobroker url https://github.com/<user>/<repo>/archive/refs/heads/main.tar.gz`
+# (or the Admin "install from GitHub" flow) always gets a ready-to-use
+# adapter - no local Node.js/npm required on the machine that installs it.
+#
+# Runs on every push to main, and can also be triggered manually from the
+# "Actions" tab (workflow_dispatch) - useful for a first build right after
+# uploading the source without triggering it via a push.
+
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
+# Needed so the job is allowed to push the build result back to the repo.
 permissions:
   contents: write
 
@@ -40,7 +51,21 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -f widgets/mywidgets/customWidgets.js widgets/mywidgets/customWidgets.js.map widgets/mywidgets/*.manifest.json 2>/dev/null || true
+
+          # Add the whole build output directory, not just customWidgets.js:
+          # that entry file dynamically imports a full assets/ folder of
+          # chunks (React, each widget, CSS) at runtime, so committing only
+          # the entry file leaves every one of those imports 404ing. `-f`
+          # forces past the .gitignore entries for customWidgets.js itself
+          # (assets/ was never gitignored, so this also fixes a second bug:
+          # an earlier version of this step listed customWidgets.js and
+          # customWidgets.js.map plus a "*.manifest.json" glob as separate
+          # pathspecs in one `git add` call - when one pathspec in a call
+          # matches no file (Module Federation actually names its manifest
+          # "mf-manifest.json"), git aborts the WHOLE call and stages
+          # nothing, which silently ate every previous build here.
+          git add -f widgets/mywidgets/
+
           if git diff --staged --quiet; then
             echo "No changes to commit - build output already up to date."
           else
