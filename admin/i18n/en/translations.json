@@ -1,0 +1,8 @@
+{
+    "info_description": "A modern, dark, card-based widget set for VIS (vis-2): Button, Toggle, Value/Energy/Battery/Weather Card, Slider, Navigation and Wallbox Card with a shared design system.",
+    "info_widgets": "Included widgets: Button, Toggle, Value Card, Energy Card, Battery Card, Slider, Weather Card, Navigation Button, Wallbox Card.",
+    "info_usage": "Configuration happens directly in the VIS editor per widget instance (object id, title, colors, ...). This page is informational only.",
+    "info_theme_header": "Theme",
+    "info_theme_label": "Active theme",
+    "info_theme_dark": "Dark (default)"
+}

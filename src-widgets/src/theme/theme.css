@@ -1,0 +1,270 @@
+/*
+ * MyWidgets - central design system
+ * ----------------------------------
+ * Every widget reads colors/radii/shadows through CSS custom properties.
+ *
+ * Integration strategy: each property below is read with a two-level
+ * fallback: `var(--card-bg, var(--mw-card-bg))`.
+ *   1. If the *host dashboard* already defines a variable with this name
+ *      (e.g. because the existing dark dashboard sets `--card-bg` on
+ *      `:root` or on `body`), that value wins - widgets automatically
+ *      match the surrounding UI with zero configuration.
+ *   2. Otherwise the `--mw-*` fallback defined here (matching the
+ *      reference dashboard) is used, so the widgets still look correct
+ *      when dropped onto a page that does not define these variables.
+ *
+ * This file only ever *defines* the `--mw-*` namespace - it never sets
+ * `--card-bg` / `--text-primary` / ... directly on :root, so it can never
+ * clobber variables the host dashboard already controls.
+ */
+
+:root {
+    /* surfaces */
+    --mw-bg: #2d2d2d;
+    --mw-card-bg: #373737;
+    --mw-card-bg-hover: #3d3d3d;
+    --mw-card-bg-active: #424242;
+
+    /* text */
+    --mw-text-primary: #f5f5f5;
+    --mw-text-secondary: #a5a5a5;
+    --mw-text-muted: #777777;
+
+    /* accents */
+    --mw-green: #50d890;
+    --mw-orange: #ff9d3f;
+    --mw-cyan: #58c7d8;
+    --mw-blue: #5b8fc9;
+    --mw-red: #ff5c5c;
+
+    /* radii */
+    --mw-radius-l: 20px;
+    --mw-radius-m: 14px;
+    --mw-radius-s: 10px;
+
+    /* elevation */
+    --mw-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+    --mw-shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.18);
+
+    /* type */
+    --mw-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+    /* motion */
+    --mw-transition-fast: 120ms ease;
+    --mw-transition: 180ms ease;
+    --mw-press-scale: 0.97;
+}
+
+/* Resolved tokens - the ONLY things widget components use directly.
+   Change the fallback half of each line to re-theme MyWidgets globally
+   without touching a single widget. */
+.mw-root {
+    --mw-t-bg: var(--dashboard-bg, var(--mw-bg));
+    --mw-t-card-bg: var(--card-bg, var(--mw-card-bg));
+    --mw-t-card-bg-hover: var(--card-bg-hover, var(--mw-card-bg-hover));
+    --mw-t-card-bg-active: var(--card-bg-active, var(--mw-card-bg-active));
+
+    --mw-t-text-primary: var(--text-primary, var(--mw-text-primary));
+    --mw-t-text-secondary: var(--text-secondary, var(--mw-text-secondary));
+    --mw-t-text-muted: var(--text-muted, var(--mw-text-muted));
+
+    --mw-t-green: var(--green, var(--mw-green));
+    --mw-t-orange: var(--orange, var(--mw-orange));
+    --mw-t-cyan: var(--cyan, var(--mw-cyan));
+    --mw-t-blue: var(--blue, var(--mw-blue));
+    --mw-t-red: var(--red, var(--mw-red));
+
+    --mw-t-radius-l: var(--border-radius, var(--mw-radius-l));
+    --mw-t-radius-m: var(--radius-medium, var(--mw-radius-m));
+    --mw-t-radius-s: var(--small-radius, var(--mw-radius-s));
+
+    --mw-t-shadow: var(--shadow, var(--mw-shadow));
+
+    font-family: var(--mw-font);
+    color: var(--mw-t-text-primary);
+    box-sizing: border-box;
+}
+
+.mw-root *,
+.mw-root *::before,
+.mw-root *::after {
+    box-sizing: inherit;
+}
+
+/* ---------- shared building blocks ---------- */
+
+.mw-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--mw-t-card-bg);
+    border-radius: var(--mw-t-radius-l);
+    box-shadow: var(--mw-t-shadow);
+    padding: clamp(12px, 6%, 20px);
+    overflow: hidden;
+    transition: background-color var(--mw-transition), transform var(--mw-transition), opacity var(--mw-transition);
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.mw-card--interactive {
+    cursor: pointer;
+}
+
+.mw-card--interactive:hover {
+    background: var(--mw-t-card-bg-hover);
+}
+
+.mw-card--interactive:active {
+    transform: scale(var(--mw-press-scale));
+}
+
+.mw-card--disabled {
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+.mw-card__header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.mw-card__title-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.mw-card__title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--mw-t-text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mw-card__subtitle {
+    font-size: 0.8rem;
+    color: var(--mw-t-text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mw-card__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 0;
+}
+
+.mw-card__value {
+    font-size: clamp(1.3rem, 8cqw, 2rem);
+    font-weight: 700;
+    color: var(--mw-t-text-primary);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+}
+
+.mw-card__value-unit {
+    font-size: 0.55em;
+    font-weight: 500;
+    color: var(--mw-t-text-secondary);
+    margin-left: 0.2em;
+}
+
+.mw-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 0.7rem;
+    color: var(--mw-t-text-muted);
+}
+
+.mw-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--mw-t-text-muted);
+    flex: none;
+    transition: background-color var(--mw-transition), box-shadow var(--mw-transition);
+}
+
+.mw-status-dot--on {
+    background: var(--mw-t-green);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--mw-t-green) 60%, transparent);
+}
+
+.mw-status-dot--warn {
+    background: var(--mw-t-orange);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--mw-t-orange) 60%, transparent);
+}
+
+.mw-status-dot--error {
+    background: var(--mw-t-red);
+}
+
+.mw-icon {
+    flex: none;
+    width: 1.4em;
+    height: 1.4em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--mw-t-text-secondary);
+    transition: color var(--mw-transition), filter var(--mw-transition);
+}
+
+.mw-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    fill: none;
+}
+
+.mw-icon--active {
+    color: var(--mw-t-green);
+    filter: drop-shadow(0 0 6px color-mix(in srgb, var(--mw-t-green) 55%, transparent));
+}
+
+.mw-unavailable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    color: var(--mw-t-text-muted);
+    font-size: 0.78rem;
+    text-align: center;
+    padding: 8px;
+    gap: 6px;
+}
+
+.mw-touch-target {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@container (max-width: 160px) {
+    .mw-card__title {
+        font-size: 0.8rem;
+    }
+
+    .mw-card__subtitle {
+        font-size: 0.7rem;
+    }
+}
+
+.mw-card {
+    container-type: inline-size;
+}

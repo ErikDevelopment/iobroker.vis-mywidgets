@@ -1,0 +1,41 @@
+.mw-wallbox-card .mw-card__header {
+    gap: 8px;
+}
+
+.mw-wallbox-card .mw-card__title {
+    flex: 1;
+}
+
+.mw-wallbox-card__icon {
+    width: 1.3em;
+    height: 1.3em;
+}
+
+.mw-wallbox-card__progress {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.mw-wallbox-card__progress-track {
+    flex: 1;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
+
+.mw-wallbox-card__progress-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: var(--mw-t-green);
+    transition: width var(--mw-transition);
+}
+
+.mw-wallbox-card__progress-label {
+    font-size: 0.72rem;
+    color: var(--mw-t-text-secondary);
+    min-width: 2.4em;
+    text-align: right;
+}

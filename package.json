@@ -1,0 +1,48 @@
+{
+    "name": "iobroker.vis-mywidgets",
+    "version": "0.1.0",
+    "description": "Modern, dark, card-based VIS widget set for ioBroker vis-2 (Button, Toggle, Value/Energy/Battery/Weather/Wallbox Cards, Slider, Navigation, ...)",
+    "author": "Erik",
+    "license": "MIT",
+    "homepage": "https://github.com/erik/iobroker.vis-mywidgets",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/erik/iobroker.vis-mywidgets"
+    },
+    "bugs": {
+        "url": "https://github.com/erik/iobroker.vis-mywidgets/issues"
+    },
+    "keywords": [
+        "ioBroker",
+        "vis",
+        "vis-2",
+        "visualization",
+        "smart-home",
+        "widgets",
+        "dashboard"
+    ],
+    "engines": {
+        "node": ">=18"
+    },
+    "main": "widgets/mywidgets/customWidgets.js",
+    "files": [
+        "admin/",
+        "widgets/",
+        "io-package.json",
+        "LICENSE",
+        "README.md"
+    ],
+    "devDependencies": {
+        "typescript": "^5.6.2"
+    },
+    "scripts": {
+        "npm": "npm install && cd src-widgets && npm install",
+        "build": "node tasks/build.js",
+        "dev": "cd src-widgets && npm run start",
+        "lint": "cd src-widgets && npm run lint",
+        "test": "tsx --test test/*.test.ts",
+        "typecheck": "cd src-widgets && npx tsc --noEmit",
+        "release": "echo \"See README.md > Installation & Release\""
+    },
+    "readmeFilename": "README.md"
+}

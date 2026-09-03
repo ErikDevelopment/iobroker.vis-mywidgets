@@ -1,0 +1,9 @@
+.mw-value-card .mw-card__header {
+    justify-content: space-between;
+}
+
+.mw-value-card__icon {
+    width: 1.6em;
+    height: 1.6em;
+    margin-left: auto;
+}

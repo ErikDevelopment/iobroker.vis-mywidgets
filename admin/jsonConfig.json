@@ -1,0 +1,40 @@
+{
+    "i18n": true,
+    "type": "panel",
+    "items": {
+        "_header": {
+            "type": "header",
+            "text": "MyWidgets",
+            "size": 3,
+            "newLine": true
+        },
+        "_desc": {
+            "type": "staticText",
+            "text": "info_description",
+            "newLine": true
+        },
+        "_widgets": {
+            "type": "staticText",
+            "text": "info_widgets",
+            "newLine": true
+        },
+        "_usage": {
+            "type": "staticText",
+            "text": "info_usage",
+            "newLine": true
+        },
+        "_theme_header": {
+            "type": "header",
+            "text": "info_theme_header",
+            "size": 4,
+            "newLine": true
+        },
+        "theme": {
+            "type": "select",
+            "label": "info_theme_label",
+            "options": [{ "value": "dark", "label": "info_theme_dark" }],
+            "default": "dark",
+            "newLine": true
+        }
+    }
+}

@@ -1,0 +1,80 @@
+{
+    "common": {
+        "name": "vis-mywidgets",
+        "version": "0.1.0",
+        "news": {
+            "0.1.0": {
+                "en": "initial release: Button, Toggle, Value Card, Energy Card, Battery Card, Slider, Weather Card, Navigation Button, Wallbox Card",
+                "de": "Erstveröffentlichung: Button, Toggle, Value Card, Energy Card, Battery Card, Slider, Weather Card, Navigation Button, Wallbox Card"
+            }
+        },
+        "title": "MyWidgets",
+        "titleLang": {
+            "en": "MyWidgets - modern dark VIS widgets",
+            "de": "MyWidgets - moderne, dunkle VIS-Widgets"
+        },
+        "desc": {
+            "en": "A modern, dark, card-based widget set for ioBroker VIS (vis-2): buttons, toggles, value/energy/battery/weather cards, sliders, thermostat, shutter, chart, navigation and wallbox widgets with a shared, themeable design system.",
+            "de": "Ein modernes, dunkles, kartenbasiertes Widget-Set für ioBroker VIS (vis-2): Buttons, Toggles, Value-/Energy-/Battery-/Weather-Cards, Slider, Thermostat, Rollladen, Chart, Navigation und Wallbox-Widgets mit einheitlichem, anpassbarem Design-System."
+        },
+        "authors": [
+            "Erik"
+        ],
+        "keywords": [
+            "vis",
+            "vis-2",
+            "widgets",
+            "dashboard",
+            "smart home",
+            "dark theme"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "icon": "vis-mywidgets.svg",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/erik/iobroker.vis-mywidgets/main/admin/vis-mywidgets.svg",
+        "readme": "https://github.com/erik/iobroker.vis-mywidgets/blob/main/README.md",
+        "loglevel": "info",
+        "mode": "none",
+        "adminUI": {
+            "config": "json"
+        },
+        "onlyWWW": true,
+        "singleton": true,
+        "noConfig": false,
+        "licenseInformation": {
+            "type": "free",
+            "license": "MIT"
+        },
+        "tier": 3,
+        "type": "visualization-widgets",
+        "connectionType": "local",
+        "dataSource": "poll",
+        "restartAdapters": [
+            "vis-2"
+        ],
+        "visWidgets": {
+            "mywidgets": {
+                "i18n": "component",
+                "name": "mywidgets",
+                "visSetLabel": "mywidgets_set_label",
+                "url": "mywidgets/customWidgets.js",
+                "bundlerType": "module",
+                "components": [
+                    "MyButton",
+                    "MyToggle",
+                    "MyValueCard",
+                    "MyEnergyCard",
+                    "MyBatteryCard",
+                    "MySlider",
+                    "MyWeatherCard",
+                    "MyNavigationButton",
+                    "MyWallboxCard"
+                ]
+            }
+        }
+    },
+    "native": {},
+    "objects": [],
+    "instanceObjects": []
+}
