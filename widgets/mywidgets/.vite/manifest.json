@@ -99,7 +99,7 @@
     "isDynamicEntry": true
   },
   "src/widgets/MyBatteryCard.tsx": {
-    "file": "assets/MyBatteryCard-g-YCejNW.js",
+    "file": "assets/MyBatteryCard-BxIDOR1L.js",
     "name": "MyBatteryCard",
     "src": "src/widgets/MyBatteryCard.tsx",
     "isEntry": true,
@@ -117,7 +117,7 @@
     ]
   },
   "src/widgets/MyButton.tsx": {
-    "file": "assets/MyButton-B9knZwx8.js",
+    "file": "assets/MyButton-D_kPwo5v.js",
     "name": "MyButton",
     "src": "src/widgets/MyButton.tsx",
     "isEntry": true,
@@ -133,7 +133,7 @@
     ]
   },
   "src/widgets/MyEnergyCard.tsx": {
-    "file": "assets/MyEnergyCard-BXisDIZu.js",
+    "file": "assets/MyEnergyCard-DYWeoAIL.js",
     "name": "MyEnergyCard",
     "src": "src/widgets/MyEnergyCard.tsx",
     "isEntry": true,
@@ -151,7 +151,7 @@
     ]
   },
   "src/widgets/MyNavigationButton.tsx": {
-    "file": "assets/MyNavigationButton-y1q__GPf.js",
+    "file": "assets/MyNavigationButton-BWCrziYQ.js",
     "name": "MyNavigationButton",
     "src": "src/widgets/MyNavigationButton.tsx",
     "isEntry": true,
@@ -166,7 +166,7 @@
     ]
   },
   "src/widgets/MySlider.tsx": {
-    "file": "assets/MySlider-B_Mgd5NO.js",
+    "file": "assets/MySlider-6D0O2r7R.js",
     "name": "MySlider",
     "src": "src/widgets/MySlider.tsx",
     "isEntry": true,
@@ -183,7 +183,7 @@
     ]
   },
   "src/widgets/MyToggle.tsx": {
-    "file": "assets/MyToggle-cwi_5MQ6.js",
+    "file": "assets/MyToggle-Bmd3fDNw.js",
     "name": "MyToggle",
     "src": "src/widgets/MyToggle.tsx",
     "isEntry": true,
@@ -199,7 +199,7 @@
     ]
   },
   "src/widgets/MyValueCard.tsx": {
-    "file": "assets/MyValueCard-DWtUTAZz.js",
+    "file": "assets/MyValueCard-VEaudgWH.js",
     "name": "MyValueCard",
     "src": "src/widgets/MyValueCard.tsx",
     "isEntry": true,
@@ -216,7 +216,7 @@
     ]
   },
   "src/widgets/MyWallboxCard.tsx": {
-    "file": "assets/MyWallboxCard-CCljxayY.js",
+    "file": "assets/MyWallboxCard-DYR3tAGu.js",
     "name": "MyWallboxCard",
     "src": "src/widgets/MyWallboxCard.tsx",
     "isEntry": true,
@@ -233,7 +233,7 @@
     ]
   },
   "src/widgets/MyWeatherCard.tsx": {
-    "file": "assets/MyWeatherCard-Dzs2_iLQ.js",
+    "file": "assets/MyWeatherCard-DM4hlm26.js",
     "name": "MyWeatherCard",
     "src": "src/widgets/MyWeatherCard.tsx",
     "isEntry": true,
@@ -264,7 +264,7 @@
     ]
   },
   "virtual:mf-exposes:__mfe_internal__mywidgets__customWidgets_js": {
-    "file": "assets/virtualExposes-BwEg1qm_.js",
+    "file": "assets/virtualExposes-DW6ne1uw.js",
     "name": "virtualExposes",
     "src": "virtual:mf-exposes:__mfe_internal__mywidgets__customWidgets_js",
     "isDynamicEntry": true,
