@@ -25,10 +25,10 @@ export default class MyToggle extends MyWidgetBase<MyToggleRxData, VisRxWidgetSt
             visSet: 'mywidgets',
             visSetLabel: 'mywidgets_set_label',
             visSetColor: '#50d890',
-            visSetIcon: 'mywidgets/img/mywidgets.svg',
+            visSetIcon: 'widgets/mywidgets/img/mywidgets.svg',
             visName: 'Toggle',
             visWidgetLabel: 'mywidgets_toggle',
-            visPrev: 'mywidgets/img/preview-toggle.png',
+            visPrev: 'widgets/mywidgets/img/preview-toggle.png',
             visAttrs: [
                 {
                     name: GROUP_DATA,

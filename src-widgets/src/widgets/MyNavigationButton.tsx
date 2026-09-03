@@ -26,10 +26,10 @@ export default class MyNavigationButton extends MyWidgetBase<MyNavigationButtonR
             visSet: 'mywidgets',
             visSetLabel: 'mywidgets_set_label',
             visSetColor: '#50d890',
-            visSetIcon: 'mywidgets/img/mywidgets.svg',
+            visSetIcon: 'widgets/mywidgets/img/mywidgets.svg',
             visName: 'Navigation Button',
             visWidgetLabel: 'mywidgets_navigation_button',
-            visPrev: 'mywidgets/img/preview-navigation.png',
+            visPrev: 'widgets/mywidgets/img/preview-navigation.png',
             visAttrs: [
                 {
                     name: 'data',

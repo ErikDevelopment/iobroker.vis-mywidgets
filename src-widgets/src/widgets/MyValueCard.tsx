@@ -41,10 +41,10 @@ export default class MyValueCard extends MyWidgetBase<MyValueCardRxData, VisRxWi
             visSet: 'mywidgets',
             visSetLabel: 'mywidgets_set_label',
             visSetColor: '#50d890',
-            visSetIcon: 'mywidgets/img/mywidgets.svg',
+            visSetIcon: 'widgets/mywidgets/img/mywidgets.svg',
             visName: 'Value Card',
             visWidgetLabel: 'mywidgets_value_card',
-            visPrev: 'mywidgets/img/preview-value-card.png',
+            visPrev: 'widgets/mywidgets/img/preview-value-card.png',
             visAttrs: [
                 {
                     name: GROUP_DATA,

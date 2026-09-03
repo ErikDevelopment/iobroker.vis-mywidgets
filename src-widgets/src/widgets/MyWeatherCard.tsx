@@ -47,10 +47,10 @@ export default class MyWeatherCard extends MyWidgetBase<MyWeatherCardRxData, Vis
             visSet: 'mywidgets',
             visSetLabel: 'mywidgets_set_label',
             visSetColor: '#50d890',
-            visSetIcon: 'mywidgets/img/mywidgets.svg',
+            visSetIcon: 'widgets/mywidgets/img/mywidgets.svg',
             visName: 'Weather Card',
             visWidgetLabel: 'mywidgets_weather_card',
-            visPrev: 'mywidgets/img/preview-weather-card.png',
+            visPrev: 'widgets/mywidgets/img/preview-weather-card.png',
             visAttrs: [
                 {
                     name: GROUP_DATA,

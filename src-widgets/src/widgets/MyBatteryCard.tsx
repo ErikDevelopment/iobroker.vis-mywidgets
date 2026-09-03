@@ -42,10 +42,10 @@ export default class MyBatteryCard extends MyWidgetBase<MyBatteryCardRxData, Vis
             visSet: 'mywidgets',
             visSetLabel: 'mywidgets_set_label',
             visSetColor: '#50d890',
-            visSetIcon: 'mywidgets/img/mywidgets.svg',
+            visSetIcon: 'widgets/mywidgets/img/mywidgets.svg',
             visName: 'Battery Card',
             visWidgetLabel: 'mywidgets_battery_card',
-            visPrev: 'mywidgets/img/preview-battery-card.png',
+            visPrev: 'widgets/mywidgets/img/preview-battery-card.png',
             visAttrs: [
                 {
                     name: GROUP_DATA,

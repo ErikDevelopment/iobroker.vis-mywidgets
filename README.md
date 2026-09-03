@@ -64,7 +64,7 @@ iobroker.vis-mywidgets/
 ## Installation
 
 ```bash
-git clone https://github.com/erik/iobroker.vis-mywidgets.git
+git clone https://github.com/ErikDevelopment/iobroker.vis-mywidgets.git
 cd iobroker.vis-mywidgets
 npm run npm      # installiert Root- UND src-widgets/-Abhängigkeiten
 npm run build

@@ -47,10 +47,10 @@ export default class MySlider extends MyWidgetBase<MySliderRxData, MySliderState
             visSet: 'mywidgets',
             visSetLabel: 'mywidgets_set_label',
             visSetColor: '#50d890',
-            visSetIcon: 'mywidgets/img/mywidgets.svg',
+            visSetIcon: 'widgets/mywidgets/img/mywidgets.svg',
             visName: 'Slider',
             visWidgetLabel: 'mywidgets_slider',
-            visPrev: 'mywidgets/img/preview-slider.png',
+            visPrev: 'widgets/mywidgets/img/preview-slider.png',
             visAttrs: [
                 {
                     name: GROUP_DATA,

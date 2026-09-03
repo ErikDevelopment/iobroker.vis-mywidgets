@@ -37,10 +37,10 @@ export default class MyButton extends MyWidgetBase<MyButtonRxData, MyButtonState
             visSet: 'mywidgets',
             visSetLabel: 'mywidgets_set_label',
             visSetColor: '#50d890',
-            visSetIcon: 'mywidgets/img/mywidgets.svg',
+            visSetIcon: 'widgets/mywidgets/img/mywidgets.svg',
             visName: 'Button',
             visWidgetLabel: 'mywidgets_button',
-            visPrev: 'mywidgets/img/preview-button.png',
+            visPrev: 'widgets/mywidgets/img/preview-button.png',
             visAttrs: [
                 {
                     name: GROUP_DATA,

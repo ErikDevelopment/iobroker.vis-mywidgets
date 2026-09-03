@@ -42,10 +42,10 @@ export default class MyEnergyCard extends MyWidgetBase<MyEnergyCardRxData, VisRx
             visSet: 'mywidgets',
             visSetLabel: 'mywidgets_set_label',
             visSetColor: '#50d890',
-            visSetIcon: 'mywidgets/img/mywidgets.svg',
+            visSetIcon: 'widgets/mywidgets/img/mywidgets.svg',
             visName: 'Energy Card',
             visWidgetLabel: 'mywidgets_energy_card',
-            visPrev: 'mywidgets/img/preview-energy-card.png',
+            visPrev: 'widgets/mywidgets/img/preview-energy-card.png',
             visAttrs: [
                 {
                     name: GROUP_DATA,

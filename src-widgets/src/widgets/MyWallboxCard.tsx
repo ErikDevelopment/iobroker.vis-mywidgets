@@ -30,10 +30,10 @@ export default class MyWallboxCard extends MyWidgetBase<MyWallboxCardRxData, Vis
             visSet: 'mywidgets',
             visSetLabel: 'mywidgets_set_label',
             visSetColor: '#50d890',
-            visSetIcon: 'mywidgets/img/mywidgets.svg',
+            visSetIcon: 'widgets/mywidgets/img/mywidgets.svg',
             visName: 'Wallbox Card',
             visWidgetLabel: 'mywidgets_wallbox_card',
-            visPrev: 'mywidgets/img/preview-wallbox.png',
+            visPrev: 'widgets/mywidgets/img/preview-wallbox.png',
             visAttrs: [
                 {
                     name: GROUP_DATA,
