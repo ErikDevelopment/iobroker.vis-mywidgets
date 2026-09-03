@@ -32,8 +32,8 @@
         "platform": "Javascript/Node.js",
         "icon": "vis-mywidgets.svg",
         "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/erik/iobroker.vis-mywidgets/main/admin/vis-mywidgets.svg",
-        "readme": "https://github.com/erik/iobroker.vis-mywidgets/blob/main/README.md",
+        "extIcon": "https://raw.githubusercontent.com/ErikDevelopment/iobroker.vis-mywidgets/main/admin/vis-mywidgets.svg",
+        "readme": "https://github.com/ErikDevelopment/iobroker.vis-mywidgets/blob/main/README.md",
         "loglevel": "info",
         "mode": "none",
         "adminUI": {

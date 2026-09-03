@@ -4,13 +4,13 @@
     "description": "Modern, dark, card-based VIS widget set for ioBroker vis-2 (Button, Toggle, Value/Energy/Battery/Weather/Wallbox Cards, Slider, Navigation, ...)",
     "author": "Erik",
     "license": "MIT",
-    "homepage": "https://github.com/erik/iobroker.vis-mywidgets",
+    "homepage": "https://github.com/ErikDevelopment/iobroker.vis-mywidgets",
     "repository": {
         "type": "git",
-        "url": "https://github.com/erik/iobroker.vis-mywidgets"
+        "url": "https://github.com/ErikDevelopment/iobroker.vis-mywidgets"
     },
     "bugs": {
-        "url": "https://github.com/erik/iobroker.vis-mywidgets/issues"
+        "url": "https://github.com/ErikDevelopment/iobroker.vis-mywidgets/issues"
     },
     "keywords": [
         "ioBroker",
