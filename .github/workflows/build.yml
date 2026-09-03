@@ -52,16 +52,19 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Add each expected file separately (never as one combined pathspec):
-          # if any single pathspec in a `git add` call matches no file, git
-          # aborts the WHOLE call and stages nothing - including files that
-          # did exist. That silently ate every previous build here, because
-          # Vite/Module Federation names its manifest "mf-manifest.json",
-          # which never matched the old "*.manifest.json" glob.
-          git add -f widgets/mywidgets/customWidgets.js
-          if [ -f widgets/mywidgets/customWidgets.js.map ]; then
-            git add -f widgets/mywidgets/customWidgets.js.map
-          fi
+          # Add the whole build output directory, not just customWidgets.js:
+          # that entry file dynamically imports a full assets/ folder of
+          # chunks (React, each widget, CSS) at runtime, so committing only
+          # the entry file leaves every one of those imports 404ing. `-f`
+          # forces past the .gitignore entries for customWidgets.js itself
+          # (assets/ was never gitignored, so this also fixes a second bug:
+          # an earlier version of this step listed customWidgets.js and
+          # customWidgets.js.map plus a "*.manifest.json" glob as separate
+          # pathspecs in one `git add` call - when one pathspec in a call
+          # matches no file (Module Federation actually names its manifest
+          # "mf-manifest.json"), git aborts the WHOLE call and stages
+          # nothing, which silently ate every previous build here.
+          git add -f widgets/mywidgets/
 
           if git diff --staged --quiet; then
             echo "No changes to commit - build output already up to date."
